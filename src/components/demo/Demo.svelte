@@ -16,7 +16,7 @@
 </script>
 
 <div id="demo">
-	<h1>Demo</h1>
+	<h1>Dunhuang Color</h1>
 	<!-- <DemoLink />
 	<DemoImg />
 	<DemoButtonSet />
