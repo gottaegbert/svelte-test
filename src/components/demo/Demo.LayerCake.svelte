@@ -4,15 +4,16 @@
 	import Scatter from "$components/layercake/Scatter.svg.svelte";
 	import AxisX from "$components/layercake/AxisX.svg.svelte";
 	import AxisY from "$components/layercake/AxisY.svg.svelte";
-	import demoData from "$components/demo/demo-layercake.csv";
+	import data from "$components/demo/demo-layercake.csv";
+	
+	// const data = range(100).map((d) => ({
+	// 	x: Math.random(),
+	// 	y: Math.random()
+	// }));
+	
 
-	const data = range(100).map((d) => ({
-		x: Math.random(),
-		y: Math.random()
-	}));
-
-	const x = "x";
-	const y = "y";
+	const x = "day";
+	const y = "temp";
 	const p = 20;
 	const padding = {
 		top: p,

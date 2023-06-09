@@ -12,28 +12,31 @@
 	import DemoFigure from "$components/demo/Demo.Figure.svelte";
 	import DemoTip from "$components/demo/Demo.Tip.svelte";
 	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
+	import DemoBubble from "$components/demo/Demo.Bubble.svelte";
 </script>
 
 <div id="demo">
 	<h1>Demo</h1>
-	<DemoLink />
+	<!-- <DemoLink />
 	<DemoImg />
 	<DemoButtonSet />
 	<DemoRange />
 	<DemoSelect />
 	<DemoToggle />
-	<DemoSortTable />
-	<DemoLayerCake />
-	<DemoSvelteElement />
+	<DemoSortTable /> -->
+	<DemoBubble />
+	<!-- <DemoLayerCake /> -->
+
+	<!-- <DemoSvelteElement />
 	<DemoSvelteComponent />
 	<DemoTip />
 	<DemoFigure />
-	<DemoScrolly />
+	<DemoScrolly /> -->
 </div>
 
 <style>
 	#demo {
-		max-width: 40rem;
+		max-width: 100rem;
 		padding: 16px;
 		margin: 0 auto;
 	}
