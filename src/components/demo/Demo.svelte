@@ -14,7 +14,7 @@
 	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
 	import DemoBubble from "$components/demo/Demo.Bubble.svelte";
 	import DemoTestbed from "$components/demo/Demo.Testbed.svelte";
-	
+	import DemoCubeMatrix from "$components/demo/Demo.CubeMatrix.svelte";
 </script>
 
 <div id="demo">
@@ -26,6 +26,7 @@
 	<DemoSelect />
 	<DemoToggle />
 	<DemoSortTable /> -->
+	<DemoCubeMatrix />
 	<DemoTestbed />
 	<DemoBubble />
 	<!-- <DemoLayerCake /> -->

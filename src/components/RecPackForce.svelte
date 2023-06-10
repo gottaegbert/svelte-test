@@ -64,14 +64,15 @@
 
       .force('center', forceCenter($width / 2, $height / 2))
       .force('charge', forceManyBody().strength(manyBodyStrength))
-      .force('collision', forceCollide().radius(d => {
-        return $rGet(d) + nodeStrokeWidth / 2; // Divide this by two because an svg stroke is drawn halfway out
-      }).strength(2))
+      .force('collision', forceCollide().radius(15).strength(1))
       .force('center', forceCenter($width / 2, $height / 2))
       .alpha(0.8)
       .restart()
   }
 
+  
+
+ 
 </script>
   {#each nodes as point,i}
 <g class='node' transform='translate({point.x - $rGet(point)}, {point.y})'>
@@ -80,38 +81,33 @@
       width={$rGet(point) }
       height={$rGet(point) }
       fill={nodeColor || point.HEX1}
-   
-  
-    />
+      transform = "translate(0 8)"
+      />
+
     <rect
       width={$rGet(point) }
       height={$rGet(point) }
       fill={nodeColor || point.HEX2}
-      transform='rotate(72)'
+        transform = "translate(0 16)"
     />
     <rect
       width={$rGet(point) }
       height={$rGet(point) }
       fill={nodeColor || point.HEX3}
-   
+         transform = "translate(0 24)"
   
-      transform='rotate(144)'
     />
     <rect
       width={$rGet(point) }
       height={$rGet(point) }
       fill={nodeColor || point.HEX4}
-   
-  
-      transform='rotate(216)'
+          transform = "translate(0 32)"
     />
     <rect
       width={$rGet(point) }
       height={$rGet(point) }
       fill={nodeColor || point.HEX5}
-   
-  
-      transform='rotate(288)'
+      transform = "translate(0 40)"
     />
   </g>
 {/each}
