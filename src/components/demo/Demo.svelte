@@ -13,6 +13,8 @@
 	import DemoTip from "$components/demo/Demo.Tip.svelte";
 	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
 	import DemoBubble from "$components/demo/Demo.Bubble.svelte";
+	import DemoTestbed from "$components/demo/Demo.Testbed.svelte";
+	
 </script>
 
 <div id="demo">
@@ -24,14 +26,15 @@
 	<DemoSelect />
 	<DemoToggle />
 	<DemoSortTable /> -->
+	<DemoTestbed />
 	<DemoBubble />
 	<!-- <DemoLayerCake /> -->
-
-	<!-- <DemoSvelteElement />
+<!-- 
+	<DemoSvelteElement />
 	<DemoSvelteComponent />
 	<DemoTip />
-	<DemoFigure />
-	<DemoScrolly /> -->
+	<DemoFigure /> -->
+	<DemoScrolly />
 </div>
 
 <style>
