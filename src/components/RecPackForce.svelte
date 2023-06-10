@@ -65,15 +65,14 @@
 
 </script>
   {#each nodes as point}
+
     <circle
       class='node'
       r={$rGet(point)}
-      fill={nodeColor || $zGet(point)}
+      fill={nodeColor || point.HEX1}
       stroke={nodeStroke}
       stroke-width={nodeStrokeWidth}
       cx='{point.x}'
       cy='{point.y}'
-    >
-      <!-- <title>{point[$custom.title]}</title> -->
-    </circle>
-  {/each}
+    > </circle>
+{/each}

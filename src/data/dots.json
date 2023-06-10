@@ -1,134 +1,115 @@
 [
   {
     "category": "a",
-    "value": 0
+    "value": 1  },
+  {
+    "category": "a",
+    "value": 1
   },
   {
     "category": "a",
-    "value": 2
+    "value": 1  },
+  {
+    "category": "a",
+    "value": 1
   },
   {
     "category": "a",
-    "value": 5
+    "value": 1
   },
   {
     "category": "a",
-    "value": 23
+    "value": 1
   },
   {
     "category": "a",
-    "value": 12
+    "value": 1  },
+  {
+    "category": "a",
+    "value": 1
   },
   {
     "category": "a",
-    "value": 50
+    "value": 1
   },
   {
     "category": "a",
-    "value": 7
+    "value": 1
   },
   {
     "category": "a",
-    "value": 20
-  },
+    "value": 1  },
   {
-    "category": "a",
-    "value": 15
-  },
-  {
-    "category": "a",
-    "value": 30
-  },
-  {
-    "category": "a",
-    "value": 2
+    "category": "b",
+    "value": 1
   },
   {
     "category": "b",
-    "value": 10
+    "value": 1
   },
   {
     "category": "b",
-    "value": 12
+    "value": 1
   },
   {
     "category": "b",
-    "value": 15
+    "value": 1  },
+  {
+    "category": "b",
+    "value": 1  },
+  {
+    "category": "b",
+    "value": 1  },
+  {
+    "category": "b",
+    "value": 1
   },
   {
     "category": "b",
-    "value": 3
+    "value": 1  },
+  {
+    "category": "b",
+    "value": 1  },
+  {
+    "category": "b",
+    "value": 1
   },
   {
     "category": "b",
-    "value": 2
-  },
-  {
-    "category": "b",
-    "value": 5
-  },
-  {
-    "category": "b",
-    "value": 35
-  },
-  {
-    "category": "b",
-    "value": 2
-  },
-  {
-    "category": "b",
-    "value": 5
-  },
-  {
-    "category": "b",
-    "value": 20
-  },
-  {
-    "category": "b",
-    "value": 12
+    "value": 1
   },
   {
     "category": "c",
-    "value": 5
+    "value": 1
   },
   {
     "category": "c",
-    "value": 4
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 2
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 32
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 25
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 40
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 35
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 25
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 19
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 25
-  },
+    "value": 1  },
   {
     "category": "c",
-    "value": 10
-  }
+    "value": 1  }
 ]

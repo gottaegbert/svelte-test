@@ -25,7 +25,7 @@
 <section>
 	<h2>Color pentagon</h2>
 	<figure>
-	<LayerCake data={data} x="cave" y="HEX3" padding={{ top: 1, right: 2, bottom: 2, left: 2 }} >
+	<LayerCake debug={true} data={data} padding={{ top: 1, right: 2, bottom: 2, left: 2 }} >
     <Svg >
     <rect x={0} y={0} width="100%" height="100%" fill="green"/>
       <Pentagon  {data} recwidth={50} recindex={30}/>
