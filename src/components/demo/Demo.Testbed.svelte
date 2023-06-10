@@ -10,13 +10,15 @@
   const xKey = 'period';
   const rKey = 'value';
   const zKey = 'cave';
-
-  let groupBy = 'true';
+const yKey = 'index';
+  let groupBy = 'false';
+  let groupByy = 'false';
 
 //   const seriesColors = 'HEX1'
 
   let manyBodyStrength = 3;
   let xStrength = 0.1
+   let yStrength = 0.1
 </script>
 
 <style>
@@ -28,7 +30,7 @@
   */
   .chart-container {
     width: 100%;
-    height: 250px;
+    height: 1000px;
   }
   label {
     cursor: pointer;
@@ -42,6 +44,10 @@
   <label><input type="radio" bind:group={groupBy} value="true"/>Group by category</label>
   <label><input type="radio" bind:group={groupBy} value="false"/>Clump together</label>
 </div>
+<div class="input-container">
+  <label><input type="checkbox"  bind:group={groupByy} value="true"/>index group</label>
+  <label><input  type="checkbox" bind:group={groupByy} value="false"/>Clump together</label>
+</div>
 
 <div class="chart-container">
   <LayerCake
@@ -50,7 +56,9 @@
     x={xKey}
     r={rKey}
     z={zKey}
+    y={yKey}
     xScale={scaleBand()}
+    yScale={scaleBand()}
     rRange={[3, 12]}
     zScale={scaleOrdinal()}
   >
@@ -58,8 +66,9 @@
       <ForceLayout
         {manyBodyStrength}
         {xStrength}
+        {yStrength}
         groupBy={JSON.parse(groupBy)}
-        nodeStroke='#fff'
+        groupByy={JSON.parse(groupByy)}
         {data}
       />
     </Svg>
