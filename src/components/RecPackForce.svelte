@@ -12,6 +12,7 @@
     forceCollide,
     forceCenter,
   } from 'd3-force';
+  import forceRectCollide from './forceRectCollide.js';
 
   const { data, width, height, xScale, xGet,yGet,yScale, rGet, zGet } = getContext('LayerCake');
 
@@ -22,7 +23,7 @@
   export let xStrength = 0.1;
 
     /** @type {Number} [yStrength=0.075] - The value passed into the `.strength` method on `forceY`. See [the documentation](https://github.com/d3/d3-force#y_strength). */
-  export let yStrength = 0.005;
+  export let yStrength = 0.15;
 
   /** @type {String} [nodeColor] Set a color manually otherwise it will default to the `zScale`. */
   export let nodeColor = undefined;
@@ -61,17 +62,41 @@
       .force('y', forceY().y(d => {
         return groupByy === true ? $yGet(d) + $yScale.bandwidth() / 2 : $width / 2;
       }).strength(yStrength))
-
-      .force('center', forceCenter($width / 2, $height / 2))
-      .force('charge', forceManyBody().strength(manyBodyStrength))
-      .force('collision', forceCollide().radius(15).strength(1))
-      .force('center', forceCenter($width / 2, $height / 2))
-      .alpha(0.8)
-      .restart()
+      // .force('collision', forceCollide().radius(15).strength(1))
+      // .force('center', forceCenter($width / 2, $height / 2-500))
+      // .force('charge', forceManyBody().strength(manyBodyStrength))
+      .force("forceRectCollide", forceRectCollide())
+      .force('rect', forceRect(250, 500, 1000, 2000));
+ 
   }
 
-  
+  function forceRect(x, y, width, height) {
+    let nodes;
+    const strength = 1;
+    function force() {
+      for (let i = 0, n = nodes.length, node; i < n; ++i) {
+        node = nodes[i];
+        if (node.x < x) {
+          node.vx += (x - node.x) * strength;
+        } else if (node.x > x + width) {
+          node.vx += (x + width - node.x) * strength;
+        }
+        if (node.y < y) {
+          node.vy += (y - node.y) * strength;
+        } else if (node.y > y + height) {
+          node.vy += (y + height - node.y) * strength ;
+        }
+      }
+    }
 
+    force.initialize = function (_) {
+      nodes = _;
+    };
+    return force;
+  };
+
+
+ 
  
 </script>
   {#each nodes as point,i}

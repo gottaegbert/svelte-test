@@ -9,8 +9,8 @@
 
   const xKey = 'period';
   const rKey = 'value';
-  const zKey = 'cave';
-const yKey = 'index';
+  // const zKey = 'cave';
+const yKey = 'cat1';
   let groupBy = 'false';
   let groupByy = 'false';
 
@@ -30,7 +30,7 @@ const yKey = 'index';
   */
   .chart-container {
     width: 100%;
-    height: 1000px;
+    height: 2000px;
   }
   label {
     cursor: pointer;
@@ -45,8 +45,8 @@ const yKey = 'index';
   <label><input type="radio" bind:group={groupBy} value="false"/>Clump together</label>
 </div>
 <div class="input-container">
-  <label><input type="checkbox"  bind:group={groupByy} value="true"/>index group</label>
-  <label><input  type="checkbox" bind:group={groupByy} value="false"/>Clump together</label>
+  <label><input type="radio"  bind:group={groupByy} value="true"/>index group</label>
+  <label><input  type="radio" bind:group={groupByy} value="false"/>Clump together</label>
 </div>
 
 <div class="chart-container">
@@ -55,11 +55,10 @@ const yKey = 'index';
     data={data}
     x={xKey}
     r={rKey}
-    z={zKey}
     y={yKey}
     xScale={scaleBand()}
     yScale={scaleBand()}
-    rRange={[3, 12]}
+    rRange={[12, 12]}
     zScale={scaleOrdinal()}
   >
     <Svg>
@@ -69,7 +68,7 @@ const yKey = 'index';
         {yStrength}
         groupBy={JSON.parse(groupBy)}
         groupByy={JSON.parse(groupByy)}
-        {data}
+       
       />
     </Svg>
   </LayerCake>
