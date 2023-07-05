@@ -15,6 +15,8 @@
 	import DemoBubble from "$components/demo/Demo.Bubble.svelte";
 	import DemoTestbed from "$components/demo/Demo.Testbed.svelte";
 	import DemoCubeMatrix from "$components/demo/Demo.CubeMatrix.svelte";
+	import DemoForceGrid from "$components/demo/Demo.ForceGrid.svelte";
+	import DemoForceGridnew from "$components/demo/Demo.ForceGridnew.svelte";
 </script>
 
 <div id="demo">
@@ -26,6 +28,8 @@
 	<DemoSelect />
 	<DemoToggle />
 	<DemoSortTable /> -->
+	<DemoForceGridnew />
+	<!-- <DemoForceGrid /> -->
 	<DemoCubeMatrix />
 	<DemoTestbed />
 	<DemoBubble />
@@ -35,7 +39,7 @@
 	<DemoSvelteComponent />
 	<DemoTip />
 	<DemoFigure /> -->
-	<DemoScrolly />
+	<!-- <DemoScrolly /> -->
 </div>
 
 <style>

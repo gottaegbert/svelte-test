@@ -7,10 +7,10 @@
 //   import data from '../../data/dots.json';
   import data from '../../data/dunhuangupdating.csv';
 
-  const xKey = 'period';
+  const xKey = 'cat1';
   const rKey = 'value';
   // const zKey = 'cave';
-const yKey = 'cat1';
+  const yKey = 'cat2';
   let groupBy = 'false';
   let groupByy = 'false';
 
@@ -19,6 +19,11 @@ const yKey = 'cat1';
   let manyBodyStrength = 3;
   let xStrength = 0.1
    let yStrength = 0.1
+  //  console.log(data);
+
+
+
+ 
 </script>
 
 <style>
@@ -48,6 +53,7 @@ const yKey = 'cat1';
   <label><input type="radio"  bind:group={groupByy} value="true"/>index group</label>
   <label><input  type="radio" bind:group={groupByy} value="false"/>Clump together</label>
 </div>
+ 
 
 <div class="chart-container">
   <LayerCake
@@ -68,7 +74,6 @@ const yKey = 'cat1';
         {yStrength}
         groupBy={JSON.parse(groupBy)}
         groupByy={JSON.parse(groupByy)}
-       
       />
     </Svg>
   </LayerCake>

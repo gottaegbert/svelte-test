@@ -12,10 +12,24 @@
     forceCollide,
     forceCenter,
   } from 'd3-force';
-  import forceRectCollide from './forceRectCollide.js';
 
   const { data, width, height, xScale, xGet,yGet,yScale, rGet, zGet } = getContext('LayerCake');
 
+
+  // const GRID_ROWS = Math.ceil(data.nodes.length / GRID_COLS);     
+  // const data_structure = {
+  //   bars : [...new Set(data.nodes.map(node => node.group))],
+  //   bar_counts : [],
+  //   bar_rows : []
+  // }
+  //    for (var i = 0; i < data_structure.bars.length; i++) {
+  //   data_structure.bar_counts[i] = data.nodes.map(node => node.group).reduce(function(n, val) {
+  //     return n + (val === data_structure.bars[i]);
+  //   }, 0);
+  //   data_structure.bar_rows[i] = Math.ceil(data_structure.bar_counts[i] / GRID_COLS);
+  // }
+
+  
   /** @type {Number} [manyBodyStrength=5] - The value passed into the `.strength` method on `forceManyBody`, which is used as the `'charge'` property on the simulation. See [the documentation](https://github.com/d3/d3-force#manyBody_strength) for more. */
   export let manyBodyStrength = 5;
 
@@ -23,7 +37,7 @@
   export let xStrength = 0.1;
 
     /** @type {Number} [yStrength=0.075] - The value passed into the `.strength` method on `forceY`. See [the documentation](https://github.com/d3/d3-force#y_strength). */
-  export let yStrength = 0.15;
+  export let yStrength = 0.005;
 
   /** @type {String} [nodeColor] Set a color manually otherwise it will default to the `zScale`. */
   export let nodeColor = undefined;
@@ -62,77 +76,54 @@
       .force('y', forceY().y(d => {
         return groupByy === true ? $yGet(d) + $yScale.bandwidth() / 2 : $width / 2;
       }).strength(yStrength))
-      // .force('collision', forceCollide().radius(15).strength(1))
-      // .force('center', forceCenter($width / 2, $height / 2-500))
+
+      .force('center', forceCenter($width / 2, $height / 2))
       // .force('charge', forceManyBody().strength(manyBodyStrength))
-      .force("forceRectCollide", forceRectCollide())
-      .force('rect', forceRect(250, 500, 1000, 2000));
- 
+      .force('collision', forceCollide().radius(15).strength(1))
+  
+      .alpha(0.8)
+      .restart()
   }
 
-  function forceRect(x, y, width, height) {
-    let nodes;
-    const strength = 1;
-    function force() {
-      for (let i = 0, n = nodes.length, node; i < n; ++i) {
-        node = nodes[i];
-        if (node.x < x) {
-          node.vx += (x - node.x) * strength;
-        } else if (node.x > x + width) {
-          node.vx += (x + width - node.x) * strength;
-        }
-        if (node.y < y) {
-          node.vy += (y - node.y) * strength;
-        } else if (node.y > y + height) {
-          node.vy += (y + height - node.y) * strength ;
-        }
-      }
-    }
-
-    force.initialize = function (_) {
-      nodes = _;
-    };
-    return force;
-  };
 
 
- 
+
  
 </script>
   {#each nodes as point,i}
 <g class='node' transform='translate({point.x - $rGet(point)}, {point.y})'>
 
 <rect
-      width={$rGet(point) }
-      height={$rGet(point) }
+      width={10 }
+      height={10 }
       fill={nodeColor || point.HEX1}
-      transform = "translate(0 8)"
+      transform = "translate(10 0)"
       />
 
     <rect
-      width={$rGet(point) }
-      height={$rGet(point) }
+      width={10 }
+      height={10 }
       fill={nodeColor || point.HEX2}
-        transform = "translate(0 16)"
+        transform = "translate(20 0)"
     />
     <rect
-      width={$rGet(point) }
-      height={$rGet(point) }
+      width={10 }
+      height={10 }
       fill={nodeColor || point.HEX3}
-         transform = "translate(0 24)"
+         transform = "translate(30 0)"
   
     />
     <rect
-      width={$rGet(point) }
-      height={$rGet(point) }
+      width={10 }
+      height={10 }
       fill={nodeColor || point.HEX4}
-          transform = "translate(0 32)"
+          transform = "translate(40 0)"
     />
     <rect
-      width={$rGet(point) }
-      height={$rGet(point) }
+      width={10 }
+      height={10 }
       fill={nodeColor || point.HEX5}
-      transform = "translate(0 40)"
+      transform = "translate(50 0)"
     />
   </g>
 {/each}
