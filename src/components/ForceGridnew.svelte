@@ -8,7 +8,7 @@
 
  
   const { data } = getContext('LayerCake');
-  const height = 300;
+  const height = 600;
   const width  = 600;
     const GRID_SIZE = 30;
     const GRID_COLS = 1;
@@ -58,7 +58,7 @@
 
             let cell = {
               y: start_x + c * GRID_SIZE,
-              x: -(height - r * GRID_SIZE),
+              x: -(height - 0.4*r * GRID_SIZE)+500,
               occupied: false,
             };
 
@@ -104,7 +104,7 @@
   
 
 // rec version
-const square = d3.symbol().type(d3.symbolSquare).size(90);
+const square = d3.symbol().type(d3.symbolSquare).size(100);
 
   let nodes = [];
   simulation.on("tick", () => {
