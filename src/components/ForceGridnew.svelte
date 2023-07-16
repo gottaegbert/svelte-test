@@ -21,6 +21,7 @@
       bar_rows: [],
     };
 
+  
   // console.log(data_structure.bars);
   // console.log("data_structure.bars.length+"+ initialNodes.length);
 
@@ -119,9 +120,36 @@ const square = d3.symbol().type(d3.symbolSquare).size(100);
         }
         return d
      })
+ 
+ nodes.forEach((node) => {
+    // Calculate luminosity for each color (HEX1 to HEX5)
+
+    const colors = node.allhex.split(',');
+    const sortedColors = sortColorsByLuminosity(colors);
+    // Sort colors based on luminosity (ascending order)
+
+    // Update the node with the sorted colors
+    node.HEX1 = sortedColors[0];
+    node.HEX2 = sortedColors[1];
+    node.HEX3 = sortedColors[2];
+    node.HEX4 = sortedColors[3];
+    node.HEX5 = sortedColors[4];
   });
+  }); 
 
+    // Function to calculate luminosity of a color
+  function getLuminosity(color) {
+    const rgb = color.substring(1).match(/.{2}/g).map((c) => parseInt(c, 16));
+    return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+  }
 
+    function sortColorsByLuminosity(colors) {
+    return colors.sort((a, b) => {
+      const luminosityA = getLuminosity(a);
+      const luminosityB = getLuminosity(b);
+      return luminosityA - luminosityB;
+    });
+  }
 
 //   function drag(simulation) {
 
@@ -148,11 +176,14 @@ const square = d3.symbol().type(d3.symbolSquare).size(100);
 //       .on("end", dragended);
 // }
 
+
+
 </script>
 
 
 
 {#each nodes as node}
+
           <path
             d={square(node)}
             transform={`translate(${[node.x, node.y]})`}
@@ -192,7 +223,7 @@ const square = d3.symbol().type(d3.symbolSquare).size(100);
             stroke="none"
             stroke-width="1"
           >
-          </path>
+          </path>      
 {/each}
 
 

@@ -17,6 +17,7 @@
 	import DemoCubeMatrix from "$components/demo/Demo.CubeMatrix.svelte";
 	import DemoForceGrid from "$components/demo/Demo.ForceGrid.svelte";
 	import DemoForceGridnew from "$components/demo/Demo.ForceGridnew.svelte";
+	import DemoSunburst from "$components/demo/Demo.Sunburst.svelte";
 </script>
 
 <div id="demo">
@@ -33,6 +34,7 @@
 	<DemoCubeMatrix />
 	<!-- <DemoTestbed /> -->
 	<DemoBubble />
+	<DemoSunburst />
 	<!-- <DemoLayerCake /> -->
 <!-- 
 	<DemoSvelteElement />
