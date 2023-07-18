@@ -7,6 +7,8 @@
   import * as d3 from 'd3';
 
  
+
+  
   const { data } = getContext('LayerCake');
   const height = 600;
   const width  = 600;
@@ -115,8 +117,8 @@ const square = d3.symbol().type(d3.symbolSquare).size(100);
       let gridpoint = grid.occupyNearest(d);
       if (gridpoint) {            
           // ensures smooth movement towards final positoin
-          d.x += (gridpoint.x - d.x) * .02;
-          d.y += (gridpoint.y - d.y) * .02;
+          d.x += (gridpoint.x - d.x) * .5;
+          d.y += (gridpoint.y - d.y) * .5;
         }
         return d
      })

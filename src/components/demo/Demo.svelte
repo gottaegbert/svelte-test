@@ -18,6 +18,9 @@
 	import DemoForceGrid from "$components/demo/Demo.ForceGrid.svelte";
 	import DemoForceGridnew from "$components/demo/Demo.ForceGridnew.svelte";
 	import DemoSunburst from "$components/demo/Demo.Sunburst.svelte";
+
+	
+
 </script>
 
 <div id="demo">
@@ -30,7 +33,7 @@
 	<DemoToggle />
 	<DemoSortTable /> -->
 	<DemoForceGridnew />
-	<!-- <DemoForceGrid /> -->
+	<DemoForceGrid />
 	<DemoCubeMatrix />
 	<!-- <DemoTestbed /> -->
 	<DemoBubble />
@@ -41,7 +44,7 @@
 	<DemoSvelteComponent />
 	<DemoTip />
 	<DemoFigure /> -->
-	<!-- <DemoScrolly /> -->
+	<DemoScrolly />
 </div>
 
 <style>
