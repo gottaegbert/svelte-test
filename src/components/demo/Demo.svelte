@@ -12,7 +12,7 @@
 	import DemoFigure from "$components/demo/Demo.Figure.svelte";
 	import DemoTip from "$components/demo/Demo.Tip.svelte";
 	import DemoScrolly from "$components/demo/Demo.Scrolly.svelte";
-	import DemoBubble from "$components/demo/Demo.Bubble.svelte";
+	import DemoCircleBurst from "$components/demo/Demo.CircleBurst.svelte";
 	import DemoTestbed from "$components/demo/Demo.Testbed.svelte";
 	import DemoCubeMatrix from "$components/demo/Demo.CubeMatrix.svelte";
 	import DemoForceGrid from "$components/demo/Demo.ForceGrid.svelte";
@@ -31,20 +31,20 @@
 	<DemoRange />
 	<DemoSelect />
 	<DemoToggle />
-	<DemoSortTable /> -->
-	<DemoForceGridnew />
-	<DemoForceGrid />
-	<DemoCubeMatrix />
-	<!-- <DemoTestbed /> -->
-	<DemoBubble />
-	<DemoSunburst />
+	<DemoSortTable />
+	<DemoForceGridnew /> -->
+	<!-- <DemoForceGrid /> -->
+	<!-- <DemoCubeMatrix /> -->
+	<DemoCircleBurst />
+	<DemoTestbed />
+	<!-- <DemoSunburst /> -->
 	<!-- <DemoLayerCake /> -->
 <!-- 
 	<DemoSvelteElement />
 	<DemoSvelteComponent />
 	<DemoTip />
 	<DemoFigure /> -->
-	<DemoScrolly />
+	<!-- <DemoScrolly /> -->
 </div>
 
 <style>

@@ -7,7 +7,7 @@
   export let width = 800;
   export let height = 800;
   export let radius =400;
-  export let positiony = 50; // 每个小方块的宽度
+  export let positiony =35; // 每个小方块的宽度
   export let recwidth = 3; // 每个小方块的宽度
   
 
@@ -51,11 +51,11 @@
     <!-- <g transform={`translate(${(i % recindex) * recwidth + recwidth / 2}, ${Math.floor(i / recindex) * recwidth + recwidth / 2})`}> -->
        <!-- <g transform={`translate(${width / 2 + Math.cos((2 * Math.PI / data.length) * i) * radius}, ${height / 2 + Math.sin((2 * Math.PI / data.length) * i) * radius})`}> -->
          <g transform={`translate(${width / 2 + radius * Math.cos((2 * Math.PI / data.length) * i)}, ${height / 2 + radius * Math.sin((2 * Math.PI / data.length) * i)}) rotate(${(360 / data.length) * i} ${width / 2} ${height / 2})`}>
-      <rect x={0} y={positiony} width={3} height={30} fill={d.HEX1} />
-      <rect x={0} y={ 2 * positiony} width={3} height={30} fill={d.HEX2} />
-      <rect x={0} y={ 3 * positiony} width={3} height={30} fill={d.HEX3} />
-      <rect x={0} y={ 4 * positiony} width={3} height={30} fill={d.HEX4} />
-      <rect x={0} y={ 5 * positiony} width={3} height={30} fill={d.HEX5} />
+      <rect x={0} y={positiony} width={5} height={30} fill={d.HEX1} />
+      <rect x={0} y={ 2 * positiony} width={5} height={30} fill={d.HEX2} />
+      <rect x={0} y={ 3 * positiony} width={5} height={30} fill={d.HEX3} />
+      <rect x={0} y={ 4 * positiony} width={5} height={30} fill={d.HEX4} />
+      <rect x={0} y={ 5 * positiony} width={5} height={30} fill={d.HEX5} />
 
         </g>
       <!-- <rect  x={(i % recindex) * recwidth}  y={Math.floor(i / recindex) * recwidth}  width={30}  height={30}  fill={d.HEX1}/> -->
